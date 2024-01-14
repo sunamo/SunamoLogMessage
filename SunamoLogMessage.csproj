@@ -3,12 +3,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>24.1.7.1</Version>
-	  <Description>Used in UI of logging systems</Description>
+    <Version>24.1.10.1</Version>
+    <Description>Used in UI of logging systems</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoEnums" Version="24.1.7.2" />
-    <PackageReference Include="SunamoTypeOfMessage" Version="24.1.7.1" />
+    <PackageReference Include="SunamoEnums" Version="24.1.10.1" />
+    <PackageReference Include="SunamoTypeOfMessage" Version="24.1.10.1" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
