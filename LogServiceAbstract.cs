@@ -1,7 +1,7 @@
 using SunamoEnums.Enums;
 using SunamoLogMessage;
 
-namespace SunamoShared.LoggerAbstract;
+namespace SunamoLogMessage;
 
 
 
