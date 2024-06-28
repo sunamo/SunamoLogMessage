@@ -1,3 +1,5 @@
+
+namespace SunamoLogMessage;
 public class TranslateAble
 {
     
