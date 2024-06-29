@@ -7,7 +7,7 @@ namespace SunamoLogMessage;
 /// But it is only one file (like here Langs), consider import it instead create standalone project
 /// Tool which will copy it automatilly also could not be bad
 /// </summary>
-internal enum Langs
+public enum LangsLogMessage
 {
     #region For easy copying to other files
     cs = 0,
