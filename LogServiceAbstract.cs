@@ -1,7 +1,5 @@
 namespace SunamoLogMessage;
 
-
-
 public abstract class LogServiceAbstract<Color, StorageClass, TextBlock>
 {
     public abstract Color GetBackgroundBrushOfTypeOfMessage(string st);
