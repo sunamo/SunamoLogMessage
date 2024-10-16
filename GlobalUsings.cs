@@ -4,7 +4,7 @@ global using System.Collections.Generic;
 global using System.Collections;
 global using System.IO;
 global using System.Linq;
-global using SunamoLogMessage._sunamo.SunamoValues;
+global using SunamoLogMessage;
 global using SunamoLogMessage._public.SunamoEnums.Enums;
 global using SunamoLogMessage._sunamo.SunamoExceptions;
 global using System.Diagnostics;
