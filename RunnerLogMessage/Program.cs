@@ -1,0 +1,53 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using SunamoCl.SunamoCmd;
+using SunamoCl.SunamoCmd.Args;
+using System.Windows;
+
+partial class Program
+{
+    const string appName = "RunnerLogMessage";
+
+    static ServiceCollection Services = new();
+    static ServiceProvider Provider;
+    static ILogger logger;
+
+    static Program()
+    {
+        CmdBootStrap.AddILogger(Services, true, null, appName);
+        Provider = Services.BuildServiceProvider();
+        logger = Provider.GetService<ILogger>() ?? throw new InvalidOperationException($"Service {nameof(ILogger)} not found in DI container");
+    }
+
+    [STAThread]
+    static void Main(string[] args)
+    {
+        MainAsync(args).GetAwaiter().GetResult();
+    }
+
+    static async Task MainAsync(String[] args)
+    {
+        var runnedAction = await CmdBootStrap.RunWithRunArgs(new RunArgs
+        {
+            AddGroupOfActions = AddGroupOfActions,
+            Args = args,
+            AskUserIfRelease = true,
+            RunInDebugAsync = RunInDebugAsync,
+            ServiceCollection = Services,
+            IsDebug =
+#if DEBUG
+            true
+#else
+            false
+#endif
+        });
+
+        Console.WriteLine("Finished: " + runnedAction);
+        Console.ReadLine();
+    }
+
+    static async Task RunInDebugAsync()
+    {
+        await Task.Delay(1);
+    }
+}
