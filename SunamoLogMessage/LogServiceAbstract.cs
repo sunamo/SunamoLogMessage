@@ -5,7 +5,7 @@ public abstract class LogServiceAbstract<Color, StorageClass, TextBlock>
     public abstract Color GetBackgroundBrushOfTypeOfMessage(string st);
     public abstract Color GetForegroundBrushOfTypeOfMessage(string st);
 
-    protected virtual List<LogMessageAbstract<Color, StorageClass>> ReadMessagesFromFile(StorageClass fileStream)
+    protected virtual List<LogMessageAbstract<Color, StorageClass>>? ReadMessagesFromFile(StorageClass fileStream)
     {
         return null;
     }

@@ -7,11 +7,11 @@ public abstract class LogMessageAbstract<Color, StorageClass> : ILogMessage<Colo
 {
     public DateTime Dt { get; private set; }
 
-    public string st { get; private set; }
+    public string st { get; private set; } = null!;
 
-    public string Message { get; private set; }
+    public string Message { get; private set; } = null!;
 
-    public Color Bg { get; set; }
+    public Color Bg { get; set; } = default!;
 
     /// <summary>
     ///     Is here for easy cast LogMessage to generic version
