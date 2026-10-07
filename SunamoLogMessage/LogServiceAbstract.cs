@@ -2,15 +2,15 @@ namespace SunamoLogMessage;
 
 public abstract class LogServiceAbstract<Color, StorageClass, TextBlock>
 {
-    public abstract Color GetBackgroundBrushOfTypeOfMessage(string st);
-    public abstract Color GetForegroundBrushOfTypeOfMessage(string st);
+    public abstract Color GetBackgroundBrushOfTypeOfMessage(string typeOfMessage);
+    public abstract Color GetForegroundBrushOfTypeOfMessage(string typeOfMessage);
 
     protected virtual List<LogMessageAbstract<Color, StorageClass>>? ReadMessagesFromFile(StorageClass fileStream)
     {
         return null;
     }
 
-    public virtual void Initialize(string soubor, bool invariant, TextBlock tssl, LangsLogMessage l)
+    public virtual void Initialize(string soubor, bool invariant, TextBlock tssl, LangsLogMessage langs)
     {
     }
 
@@ -18,5 +18,5 @@ public abstract class LogServiceAbstract<Color, StorageClass, TextBlock>
 
     protected abstract LogMessageAbstract<Color, StorageClass> CreateMessage();
 
-    public abstract LogMessageAbstract<Color, StorageClass> Add(string st, string status);
+    public abstract LogMessageAbstract<Color, StorageClass> Add(string typeOfMessage, string status);
 }

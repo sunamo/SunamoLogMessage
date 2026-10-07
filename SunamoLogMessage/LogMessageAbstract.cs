@@ -16,14 +16,14 @@ public abstract class LogMessageAbstract<Color, StorageClass> : ILogMessage<Colo
     /// <summary>
     ///     Is here for easy cast LogMessage to generic version
     /// </summary>
-    /// <param name="dt"></param>
+    /// <param name="dateTime"></param>
     /// <param name="typeOfMessage"></param>
     /// <param name="message"></param>
     /// <param name="color"></param>
-    public LogMessageAbstract<Color, StorageClass> Initialize(DateTime dt, string typeOfMessage, string message,
+    public LogMessageAbstract<Color, StorageClass> Initialize(DateTime dateTime, string typeOfMessage, string message,
         Color color)
     {
-        Dt = dt;
+        Dt = dateTime;
         st = typeOfMessage;
         Message = message;
         Bg = color;
@@ -33,8 +33,8 @@ public abstract class LogMessageAbstract<Color, StorageClass> : ILogMessage<Colo
     /// <summary>
     ///     Must be method because call WpfApp.cd.RunAsync (works with controls)
     /// </summary>
-    /// <param name="c"></param>
-    protected virtual void SetBg(Color c)
+    /// <param name="color"></param>
+    protected virtual void SetBg(Color color)
     {
     }
 }
