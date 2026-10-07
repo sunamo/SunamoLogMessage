@@ -6,34 +6,34 @@ using System.Windows.Media;
 
 public class WpfControlGenerator
 {
-    public static StackPanel VerticalColoredList(List<ILogMessage<Color, string>> c)
+    public static StackPanel VerticalColoredList(List<ILogMessage<Color, string>> messages)
     {
-        StackPanel sp = new StackPanel();
-        sp.Orientation = Orientation.Vertical;
-        foreach (var item in c)
+        StackPanel stackPanel = new StackPanel();
+        stackPanel.Orientation = Orientation.Vertical;
+        foreach (var item in messages)
         {
-            Grid g = new Grid();
-            g.Background = new SolidColorBrush(item.Bg);
-            TextBlock tb = new TextBlock();
-            tb.Text = item.Message;
-            Grid.SetColumn(tb, 0);
-            Grid.SetRow(tb, 0);
-            g.Children.Add(tb);
-            sp.Children.Add(g);
+            Grid grid = new Grid();
+            grid.Background = new SolidColorBrush(item.Bg);
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = item.Message;
+            Grid.SetColumn(textBlock, 0);
+            Grid.SetRow(textBlock, 0);
+            grid.Children.Add(textBlock);
+            stackPanel.Children.Add(grid);
         }
-        return sp;
+        return stackPanel;
     }
 
-    public static Grid LogMessage(ILogMessage<Color, string> c)
+    public static Grid LogMessage(ILogMessage<Color, string> logMessage)
     {
-        Grid g = new Grid();
-        g.Background = new SolidColorBrush(c.Bg);
-        TextBlock tb = new TextBlock();
-        tb.Text = c.Message;
-        tb.TextWrapping = TextWrapping.Wrap;
-        Grid.SetColumn(tb, 0);
-        Grid.SetRow(tb, 0);
-        g.Children.Add(tb);
-        return g;
+        Grid grid = new Grid();
+        grid.Background = new SolidColorBrush(logMessage.Bg);
+        TextBlock textBlock = new TextBlock();
+        textBlock.Text = logMessage.Message;
+        textBlock.TextWrapping = TextWrapping.Wrap;
+        Grid.SetColumn(textBlock, 0);
+        Grid.SetRow(textBlock, 0);
+        grid.Children.Add(textBlock);
+        return grid;
     }
 }
