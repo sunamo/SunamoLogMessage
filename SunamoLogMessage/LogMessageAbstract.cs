@@ -5,12 +5,24 @@ namespace SunamoLogMessage;
 /// </summary>
 public abstract class LogMessageAbstract<Color, StorageClass> : ILogMessage<Color, StorageClass>
 {
+    /// <summary>
+    /// Gets or sets the dt.
+    /// </summary>
     public DateTime Dt { get; private set; }
 
+    /// <summary>
+    /// Gets or sets the st.
+    /// </summary>
     public string st { get; private set; } = null!;
 
+    /// <summary>
+    /// Gets or sets the message.
+    /// </summary>
     public string Message { get; private set; } = null!;
 
+    /// <summary>
+    /// Gets or sets the bg.
+    /// </summary>
     public Color Bg { get; set; } = default!;
 
     /// <summary>

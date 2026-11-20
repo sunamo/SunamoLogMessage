@@ -4,8 +4,16 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
+/// <summary>
+/// Represents the wpf control generator type.
+/// </summary>
 public class WpfControlGenerator
 {
+    /// <summary>
+    /// Vertical colored list.
+    /// </summary>
+    /// <param name="messages">The messages.</param>
+    /// <returns>The vertical colored list result.</returns>
     public static StackPanel VerticalColoredList(List<ILogMessage<Color, string>> messages)
     {
         StackPanel stackPanel = new StackPanel();
@@ -24,6 +32,11 @@ public class WpfControlGenerator
         return stackPanel;
     }
 
+    /// <summary>
+    /// Log message.
+    /// </summary>
+    /// <param name="logMessage">The log message.</param>
+    /// <returns>The log message result.</returns>
     public static Grid LogMessage(ILogMessage<Color, string> logMessage)
     {
         Grid grid = new Grid();
